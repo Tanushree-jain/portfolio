@@ -37,6 +37,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/@fontsource/alice/latin.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -97,6 +100,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/@fontsource/alice/latin.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -104,5 +110,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "5478128c-6ab0-46da-94d9-9c7d0f36b138"
   }
 }
