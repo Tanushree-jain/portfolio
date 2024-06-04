@@ -22,3 +22,11 @@ section{
 .imag , .frstdiv , .scnddiv{
     width: 33%;
 }
+@media only screen and (max-width: 894px) {
+    .imag {
+      display: none;
+    }
+     .frstdiv , .scnddiv{
+        width: 50%;
+    }
+  }
