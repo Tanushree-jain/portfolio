@@ -1,0 +1,32 @@
+.year{
+    background: #e1f1ff;
+    padding: 3px 8px 3px 8px;
+    border-radius: 5px;
+}
+.content{
+padding: 5px 15px 5px 15px;
+    margin-bottom: 1.8em;
+    border-left: 1px solid #47a3ba;
+}
+.colg{
+    font-style: italic;
+}
+
+.edu{
+    display: inline-flex;
+    width: 100%;
+}
+section{
+    padding: 40px;
+}
+.imag , .frstdiv , .scnddiv{
+    width: 33%;
+}
+@media only screen and (max-width: 894px) {
+    .imag {
+      display: none;
+    }
+     .frstdiv , .scnddiv{
+        width: 50%;
+    }
+  }
