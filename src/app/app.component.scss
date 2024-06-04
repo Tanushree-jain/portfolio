@@ -249,4 +249,16 @@
     width: 40%;
   }
   
-  
+  p{
+    font-family: cursive;
+    font-size: large;
+  }
+
+  @media only screen and (max-width: 894px) {
+    .vimg {
+      display: none;
+    }
+    .intro{
+      width: 100%;
+    }
+  }
