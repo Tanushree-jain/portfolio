@@ -15,7 +15,7 @@ img{
   height: 100px;
 }
 .stack {
-	margin: 10px;
+	margin: 10px 0px 10px 0px;
 	width: 65%;
 	max-width: 150px;
 	transition: .25s ease;
@@ -37,7 +37,7 @@ img{
 	position: relative;
 	transition: .15s ease;
 	cursor: pointer;
-	padding: 5% 5% 15% 5%;
+	padding: 5% 5% 5% 5%;
 	&:before, &:after {
 		content: "";
 		display: block;
@@ -80,4 +80,9 @@ img{
 	.browser-warning {
 		display: none;
 	}
+}
+p{
+	text-align: center;
+	font-size: medium;
+	margin-bottom: 0rem;
 }
