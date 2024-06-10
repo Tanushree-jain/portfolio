@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
-  const mySecret = process.env.MY_SECRET;
-console.log(The secret is ${mySecret});
+  constructor(){
+      const mySecret = process.env.MY_SECRET;
+console.log("The secret is", mySecret);
+  }
+
 }
