@@ -9,7 +9,7 @@ import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 export class ContactComponent {
   contactForm: FormGroup;
 
-  private googleScriptURL = 'https://script.google.com/macros/s/AKfycbyUiehjJgo8OjlMPaKJs4_Cs15Yk41EGj_7vKASh_Ve2AG8JBDh9CwfA8wZnJWVT40O-A/exec';
+  private googleScriptURL = '';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
