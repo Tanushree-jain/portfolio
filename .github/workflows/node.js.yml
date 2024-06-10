@@ -8,7 +8,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+env:
+        MY_SECRET: ${{ secrets.test }}
+        
 jobs:
   build:
 
