@@ -1,13 +1,11 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name:</label>
-    <input id="name" formControlName="name" required>
-  
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email" type="email" required>
-  
-    <label for="message">Message:</label>
-    <textarea id="message" formControlName="message" required></textarea>
-  
-    <button type="submit" [disabled]="contactForm.invalid">Submit</button>
-  </form>
+<!-- google-form.component.html -->
+<div class="form-container">
+    <iframe
+      src="https://forms.gle/Y6iaoXZJg95XWKZf9"
+   
+      style="border: 0; width: 50%; height: 100%;"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
   
