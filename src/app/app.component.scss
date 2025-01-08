@@ -13,9 +13,12 @@
   width: 100%;
   height: auto;
   display: inline-flex;
+  background: radial-gradient(#deecf9,#deecf9, #b1c7f0);
+//   background-image: url('../assets/images/frstback.jpg');
+// background-size: cover;
 }
 .vimg{
-  width: 60%;
+  width: 40%;
   // position:absolute;
   // bottom: 0;
 }
@@ -246,7 +249,8 @@
     top: 20%;
     position: relative;
     padding: 50px;
-    width: 40%;
+    width: 60%;
+ 
   }
   
   p{
