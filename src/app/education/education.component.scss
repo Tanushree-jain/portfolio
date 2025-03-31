@@ -1,15 +1,25 @@
-.year{
-    background: #e1f1ff;
-    padding: 3px 8px 3px 8px;
-    border-radius: 5px;
+.card{
+    border: none;
+
+}
+.innerCard{
+border-radius: 10px;    
+background-color: #d0b891;
+border: 5px;
+padding: 1em;
+text-align: center;
 }
 .content{
 padding: 5px 15px 5px 15px;
     margin-bottom: 1.8em;
-    border-left: 1px solid #47a3ba;
+    // border-left: 1px solid #47a3ba;
+}
+.hrdash{
+    border: 1px dashed #964004;
 }
 .colg{
     font-style: italic;
+    font-size: 20px;
 }
 
 .edu{
