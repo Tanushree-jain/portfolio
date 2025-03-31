@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
     this.voices = this.synth.getVoices();
   }
 ngOnInit(): void {
-  this.speak("Hey! My name is Tanushree Gangwal. I am a Full Stack Developer");
+  // this.speak("Hey Welcome! This is Tanushree Gangwal.");
   
 }
  toggleMenu() {
