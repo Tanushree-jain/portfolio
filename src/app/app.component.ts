@@ -17,7 +17,10 @@ ngOnInit(): void {
   this.speak("Hey! My name is Tanushree Gangwal. I am a Full Stack Developer");
   
 }
-
+ toggleMenu() {
+  const navLinks = document.getElementById('nav-links');
+  navLinks?.classList.toggle('active');
+}
 
 speak(string: any) {
   let u = new SpeechSynthesisUtterance(string);
