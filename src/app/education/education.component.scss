@@ -9,11 +9,7 @@ border: 5px;
 padding: 1em;
 text-align: center;
 }
-.content{
-padding: 5px 15px 5px 15px;
-    margin-bottom: 1.8em;
-    // border-left: 1px solid #47a3ba;
-}
+
 .hrdash{
     border: 1px dashed #964004;
 }
@@ -29,14 +25,40 @@ padding: 5px 15px 5px 15px;
 section{
     padding: 40px;
 }
-.imag , .frstdiv , .scnddiv{
-    width: 33%;
-}
-@media only screen and (max-width: 894px) {
-    .imag {
-      display: none;
+
+  .glow {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5em;
+  }
+  
+  .glow::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: linear-gradient(45deg, #b13800, #c07f0f);
+    animation: rotate 4s linear infinite;
+    opacity: 0.1;
+    z-index: 0;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
     }
-     .frstdiv , .scnddiv{
-        width: 50%;
+    100% {
+      transform: rotate(360deg);
     }
   }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
