@@ -1,6 +1,15 @@
 $accent-color: #392338;
 
-
+.desBox{
+	background: #d0b891;
+    padding: 1em;
+    border-radius: 10px;
+}
+.inBox{
+	background: #ffffff2e;
+	height: 100%;
+	border-radius: 10px;
+}
 .wrapper {
 	display: flex;
 	flex-flow: row wrap;
