@@ -15,15 +15,18 @@ $accent-color: #392338;
 	flex-flow: row wrap;
 	justify-content: center;
 }
+.row{
+	margin:0px ;
+}
 li{
-	font-size: 18px;
+	font-size: 20px;
 }
 .exp{
 	padding: 1em;
 }
 .card {
 	border: none;
-	width: 50%;
+	// width: 50%;
 	height: 340px;
 	padding: 0em 2em;
 	perspective: 1500px;
