@@ -9,7 +9,7 @@ export class ExperienceComponent {
   experiences = [
     {
       id: 1,
-      position: 'Software Engineer',
+      position: 'Project Engineer',
       company: 'C-DAC, MOHALI',
       period: '2022 - Present',
       responsibilities: [
@@ -25,7 +25,7 @@ export class ExperienceComponent {
     },
     {
       id: 2,
-      position: 'System Administrator',
+      position: 'Project Associate',
       company: 'INFLIBNET CENTRE',
       period: '2021 - 2022',
       responsibilities: [
