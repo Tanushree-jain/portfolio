@@ -10,45 +10,74 @@
     </ul>
   </nav>
 </header>
+
+<button class="theme-toggle" (click)="toggleTheme()">
+  <i class="fa" [class.fa-sun-o]="isDarkTheme" [class.fa-moon-o]="!isDarkTheme"></i>
+</button>
+
 <div class="main-content" id="main-content">
-  <section class="imgs row" style="margin-left: 0px;">
-    <div class="intro col-7">
-      <h1 class="brown">Hey! My name is Tanushree Gangwal. </h1>
-        <h2>Full Stack Developer | NodeJs | Angular</h2>
-      <p>I have been working as a Full Stack Developer since 2021, blending my problem-solving skills with a passion for
-        coding. My journey into web development began in college, where I discovered the intersection of design and
-        functionality. While I don't consider myself a designer, I excel at translating pre-designed concepts into
-        clean, efficient code, ensuring that every project is executed flawlessly from concept to completion.
-        <br>
-        With over <strong class="brown"> 3+ years </strong>of experience, I specialize in crafting dynamic, user-centric, and scalable web applications.
-        My expertise lies in building robust backends with  <strong class="brown">Node.js</strong>, creating interactive frontends using <strong class="brown">Angular</strong>, and
-        managing databases with  <strong class="brown">MySQL</strong> and  <strong class="brown">MongoDB</strong>. I am proficient in the  <strong class="brown">MEAN stack</strong>, skilled in designing responsive
-        UI components with Angular Material and Bootstrap 5, and experienced in building <strong class="brown">RESTful and GraphQL APIs </strong>, working with
-        <strong class="brown"> Elasticsearch </strong>queries, and integrating third-party services.
-        <br>
-        My passion for development drives me to continually learn and grow, ensuring I can always deliver the best
-        possible solutions for every project.
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/tanushree-gangwal" target="_blank" class="social"><i
-            class="fa fa-linkedin"></i></a>
-        <a href="https://github.com/Tanushree-jain" target="_blank" class="social"> <i class="fa fa-github"></i></a>
-       
-      </p>
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="intro">
+          <h1>Hey! I'm <span class="highlight">Tanushree Gangwal</span></h1>
+          <h2>Full Stack Developer | NodeJs | Angular</h2>
+          <p class="description">I have been working as a Full Stack Developer since 2021, blending my problem-solving skills with a passion for
+            coding. My journey into web development began in college, where I discovered the intersection of design and
+            functionality.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/tanushree-gangwal" target="_blank" class="social">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Tanushree-jain" target="_blank" class="social">
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="profile-image">
+          <img src="../assets/images/myimg.png" alt="Tanushree Gangwal" />
+        </div>
+      </div>
     </div>
-<div class="col-4">
-    <img src="../assets/images/myimg.png" class="vimg" />
-  </div>
   </section>
-  <img src="../assets/svg/wave.svg" />
-  <div>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>While I don't consider myself a designer, I excel at translating pre-designed concepts into
+          clean, efficient code, ensuring that every project is executed flawlessly from concept to completion.</p>
+        <div class="expertise">
+          <div class="expertise-item">
+            <i class="fa fa-server expertise-icon"></i>
+            <h3>Backend Development</h3>
+            <p>Building robust backends with <strong>Node.js</strong>, creating <strong>RESTful and GraphQL APIs</strong>, and working with <strong>Elasticsearch</strong>.</p>
+          </div>
+          <div class="expertise-item">
+            <i class="fa fa-code expertise-icon"></i>
+            <h3>Frontend Development</h3>
+            <p>Creating interactive frontends using <strong>Angular</strong>, designing responsive UI components with Angular Material and Bootstrap 5.</p>
+          </div>
+          <div class="expertise-item">
+            <i class="fa fa-database expertise-icon"></i>
+            <h3>Database Management</h3>
+            <p>Managing databases with <strong>MySQL</strong> and <strong>MongoDB</strong>, ensuring efficient data storage and retrieval.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sections">
     <app-education id="Education"></app-education>
-    <app-about id="Experience"></app-about>
-   
+    <app-experience id="Experience"></app-experience>
     <app-skills id="skills"></app-skills>
     <app-certificates id="certificates"></app-certificates>
-    <app-contact></app-contact>
-    <div>
-    </div>
   </div>
 </div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>Handcrafted by Tanushree with <span class="heart">❤</span> & endless curiosity</p>
+  </div>
+</footer>

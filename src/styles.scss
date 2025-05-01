@@ -1,16 +1,210 @@
+// Theme variables
+:root {
+  // Light theme (default)
+  --background-color: #ffffff;
+  --text-color: #2c3e50;
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --card-background: #f8f9fa;
+  --header-background: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --footer-background: #2c3e50;
+  --footer-text: #ffffff;
+}
 
-h3 , h1,h2{
-    font-family: "Alice";
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ecf0f1;
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --card-background: #2d2d2d;
+  --header-background: #2d2d2d;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --footer-background: #1a1a1a;
+  --footer-text: #ecf0f1;
+}
+
+// Responsive breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 992px;
+$breakpoint-desktop: 1200px;
+
+// Base styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+// Responsive typography
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 2rem;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.75rem;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.25rem;
+  }
+}
+
+.heading {
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1rem;
+  }
+}
+
+.brown {
+  color: var(--accent-color);
+}
+
+// Container class for responsive layouts
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (max-width: $breakpoint-desktop) {
+    max-width: 960px;
+  }
+  
+  @media (max-width: $breakpoint-laptop) {
+    max-width: 720px;
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    max-width: 540px;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 0.5rem;
+  }
+}
+
+// Theme toggle button
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1001;
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  
+  i {
+    font-size: 1.2rem;
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 35px;
+    height: 35px;
     
+    i {
+      font-size: 1rem;
+    }
+  }
 }
 
-.heading{
-    text-align: center;
+// Footer styles
+.footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 4rem;
+  
+  .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    
+    p {
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--footer-text);
+      
+      .heart {
+        color: var(--accent-color);
+        animation: heartbeat 1.5s infinite;
+      }
+    }
+  }
 }
-p{
-    font-family: cursive;
-    font-size: large;
-}
-.brown{
-   color: #964004;
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
 }

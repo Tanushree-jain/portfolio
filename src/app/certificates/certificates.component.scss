@@ -1,6 +1,246 @@
-section{
-    padding: 40px;
+@import '../../styles.scss';
+
+section {
+  padding: 5rem 0;
+  background-color: var(--background-color);
+  min-height: 100vh;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  }
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.certificate-card {
+  background: var(--card-background);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  height: 350px;
+  perspective: 1500px;
+  
+  .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+  }
+  
+  .more {
+    display: none;
+    
+    &:checked ~ .content {
+      transform: rotateY(180deg);
+    }
+  }
+  
+  .front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 6px;
+    
+    .inner {
+      height: 100%;
+      display: grid;
+      padding: 1.5em;
+      transform: translateZ(80px) scale(0.94);
+    }
+  }
+  
+  .front {
+    background: linear-gradient(40deg, var(--primary-color), var(--secondary-color));
+    
+    .inner {
+      grid-template-rows: 2fr 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+      
+      .certificate-icon {
+        grid-row: 1;
+        font-size: 3.5rem;
+        color: white;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      h2 {
+        grid-row: 2;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #fff;
+        font-weight: 500;
+        text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      
+      .issuer {
+        grid-row: 3;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1em;
+        text-align: center;
+      }
+    }
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background-color: var(--card-background);
+    border: 2px solid var(--border-color);
+    
+    .inner {
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
+    }
+    
+    .description {
+      grid-row: 1;
+      font-size: 0.9em;
+      border-radius: 5px;
+      font-weight: 600;
+      line-height: 1.4em;
+      overflow: auto;
+      color: var(--text-color);
+      padding-right: 10px;
+      text-align: center;
+      
+      p {
+        margin-bottom: 1em;
+      }
+      
+      .date, .credential {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 0.5em;
+        color: var(--primary-color);
+        
+        i {
+          color: var(--secondary-color);
+        }
+        
+        a {
+          color: var(--primary-color);
+          text-decoration: none;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+  
+  .button {
+    grid-row: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    padding: 0 1.5em;
+    height: 3em;
+    line-height: 2.9em;
+    min-width: 3em;
+    background-color: transparent;
+    border: solid 2px #fff;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    left: 50%;
+    backface-visibility: hidden;
+    transition: 0.3s ease-in-out;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      background-color: #fff;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      text-shadow: none;
+      color: var(--primary-color);
+    }
+    
+    &.return {
+      line-height: 3em;
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      text-shadow: none;
+      
+      &:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .certificates-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .certificate-card {
+    height: 300px;
+  }
+}
+
 .thumbs {
     display:flex;
     justify-content:center;
@@ -119,4 +359,113 @@ section{
     border-radius: 10px;
     transition: color 0.3s ease-in-out;
   }
+
+.certificates-section {
+  padding: 5rem 0;
+  background-color: var(--background-color);
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  }
+}
+
+.github-link {
+  margin-top: 3rem;
+  
+  p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    
+    i {
+      font-size: 1.5rem;
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .certificates-section {
+    padding: 4rem 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .github-link {
+    p {
+      font-size: 1.1rem;
+    }
+    
+    a {
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .certificates-section {
+    padding: 3rem 0;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  .github-link {
+    p {
+      font-size: 1rem;
+    }
+    
+    a {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
 

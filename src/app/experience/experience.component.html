@@ -1,0 +1,56 @@
+<section class="experience-section">
+    <div class="container">
+        <div class="section-header">
+            <h1>Professional Experience</h1>
+            <p class="section-subtitle">A journey through my career milestones</p>
+        </div>
+
+        <div class="experience-grid">
+            <div class="experience-card" *ngFor="let exp of experiences; let i = index">
+                <div class="card-header">
+                    <div class="company-logo">
+                        <i class="fa fa-building"></i>
+                    </div>
+                    <div class="company-info">
+                        <h2>{{ exp.position }}</h2>
+                        <h3>{{ exp.company }}</h3>
+                        <div class="duration">
+                            <i class="fa fa-calendar"></i>
+                            <span>{{ exp.period }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <div class="tech-stack">
+                        <h4><i class="fa fa-code"></i> Technologies Used</h4>
+                        <div class="tech-pills">
+                            <span class="tech-pill" *ngFor="let tech of exp.technologies">
+                                <i class="fa fa-check"></i>
+                                {{ tech }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="responsibilities">
+                        <h4><i class="fa fa-tasks"></i> Key Responsibilities</h4>
+                        <ul>
+                            <li *ngFor="let resp of exp.responsibilities">
+                                <div class="responsibility-content">
+                                    <i class="fa fa-arrow-right"></i>
+                                    <span>{{ resp }}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="experience-number">
+                        <span>0{{ i + 1 }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
